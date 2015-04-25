@@ -1,0 +1,48 @@
+html(lang="en")
+    head        
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+
+        title Node Bazaar
+
+        link(href="css", rel="stylesheet")
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+        script(src="js")
+
+        style(type="text/css") .centerStuff { text-align: center; } .footer { position: absolute; bottom: 0; width: 100%; } .formMargin { margin-top: 50px; }
+        
+    body
+        nav(class="navbar navbar-default")
+            div(class="container-fluid")
+                div(class="navbar-header")
+                    a(class="navbar-brand", href="main") Node Bazaar
+                    
+                div(class="collapse navbar-collapse", id="bs-example-navbar-collapse-1")                
+                    ul(class="nav navbar-nav")
+                        li
+                            a(href="list") All Postings
+                        li
+                            a(href="create") Create Posting
+                        li(class="dropdown")
+                            a(href="#", class="dropdown-toggle", data-toggle="dropdown", role="button", aria-expanded="false") Your Postings
+                                span(class="caret")
+                            ul(class="dropdown-menu", role="menu")
+                                li
+                                    a(href="#")
+                                    form(class="dropdown-form", role="search", method="post", action="viewform")
+                                        div(class="form-group")
+                                            input(name="action", type="text", value="key", hidden)
+                                            input(name="key", type="text", class="form-control", placeholder="Post Key")
+                                        button(type="submit", class="btn btn-default") Get Postings
+
+                    form(class="navbar-form navbar-right", role="search", method="post", action="viewform")
+                        div(class="form-group")
+                            input(name="action", type="text", value="title", hidden)
+                            input(name="title", type="text", class="form-control", placeholder="Posting Title")
+                        button(type="submit", class="btn btn-default") Find Postings
+
+        div(class="container formatMargin")
+            div(class="jumbotron centerStuff")
+                h1 #{action}
+                p Have a good day!
